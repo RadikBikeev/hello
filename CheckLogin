@@ -1,0 +1,15 @@
+pm.test("Status Code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response contains 'accessToken'", function () {
+    pm.response.to.have.jsonBody('accessToken');
+});
+
+pm.test("Store 'accessToken' in variable", function () {
+    pm.environment.set('accessToken', pm.response.json().accessToken);
+});
+
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime < 200).to.be.true;
+});
