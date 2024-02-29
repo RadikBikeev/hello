@@ -1,0 +1,5 @@
+SELECT *
+FROM ваша_таблица
+WHERE campaignId = 145602
+  AND date >= '2023-12-31'::timestamp
+  AND date < '2024-01-31'::timestamp;
